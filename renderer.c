@@ -216,7 +216,7 @@ void parse_and_insert_STL(char* file, double max_radius, int32_t* num_triangles,
 	int32_t i;
 	char buffer[BUFFER_SIZE];
 	while (1) {
-		int32_t num_elements_read = fread(&buffer, 1, BUFFER_SIZE, fp);
+		int32_t num_elements_read = fread(buffer, 1, BUFFER_SIZE, fp);
 		for (i = 0; i < num_elements_read / STL_BLOCK_SIZE; i++) {
 			char* cur_buffer = buffer + i * STL_BLOCK_SIZE;
 			RawTriangle t;
